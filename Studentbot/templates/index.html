@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>📅 Study Scheduler Bot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background: #f0f8ff;
+        }
+        h1 {
+            color: #333;
+        }
+        input, textarea, button {
+            margin-top: 10px;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .response {
+            margin-top: 30px;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>📅 Study Scheduler Bot</h1>
+    <form method="post">
+        <label>Name:</label>
+        <input type="text" name="name" required>
+
+        <label>Your Subjects (comma separated):</label>
+        <input type="text" name="subjects" required>
+
+        <label>Total Days Left:</label>
+        <input type="number" name="days" required>
+
+        <label>Daily Study Hours:</label>
+        <input type="number" name="hours" required>
+
+        <button type="submit">Generate Study Plan</button>
+    </form>
+
+    {% if schedule %}
+        <div class="response">
+            <h3>🗓️ Your Study Plan:</h3>
+            <p>{{ schedule }}</p>
+        </div>
+    {% endif %}
+</body>
+</html>
